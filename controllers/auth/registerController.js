@@ -1,9 +1,7 @@
 import Joi from 'joi';
-import { RefreshToken, User } from '../../models';
+import { User } from '../../models';
 import { CustomErrorhandler } from '../../services';
 import bcrypt from 'bcrypt';
-// import { JwtService } from '../../services';
-// import { REFRESH_SECRET } from '../../config';
 import multer from 'multer';
 import path from 'path';
 import fs from 'fs';
