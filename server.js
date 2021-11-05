@@ -12,6 +12,15 @@ const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'Connection error...'));
 db.once('open', () => { console.log('DB connected...'); });
 
+const cors = require("cors");
+app.use(cors())
+app.use(function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header('Access-Control-Allow-Methods', 'DELETE, PUT, GET, POST');
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+ });
+
 global.appRoot = path.resolve(__dirname);
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
